@@ -1,0 +1,110 @@
+@charset "utf-8";
+@darkred-base:#8b0000; //深红色
+@darkBlue-base:#00008b; //深蓝色
+@blue:#00008b; //深蓝色
+@blue:#00f; //蓝色
+@darkGreen:#006400; //深绿色
+@green:#008000; //绿色
+@deepPink-base:#ff1493; //深粉色
+@darkOrange:#ff8c00; //深橙色
+@orange:#ffa500; //橙色
+@gray-base:#000;
+@gray-darker:lighten(@gray-base, 13.5%); // #222
+@gray-dark:lighten(@gray-base, 20%); // #333
+@gray:lighten(@gray-base, 50%); // #808080
+@gray-light:lighten(@gray-base, 46.7%); // #777
+@gray-lighter:lighten(@gray-base, 93.5%); // #eee
+@whiteSmoke:lighten(@gray-base, 96%); // #f5f5f5 白烟
+@gainsboro:lighten(@gray-base, 86.1%); // #dcdcdc 亮灰色
+@lightGrey:lighten(@gray-base, 82.9%); // #D3D3D3 浅灰色
+@silver:lighten(@gray-base, 75.1%); // #c0c0c0 银白色
+@darkGray:lighten(@gray-base, 66.1%); // #a9a9a9 深灰色
+@white:lighten(@gray-base, 100%); // #ffffff 纯白
+@red:lighten(@darkred-base, 22.8%); // #ff0000 纯红
+
+// 公共内外填充
+.loop(@i) when (@i > 0){
+  .loop((@i - 1));
+  @k:@i * 5;
+  & .mar-@{k}{margin:unit((@k), px);}
+  & .ml-@{k}{margin-left:unit((@k), px);}
+  & .mt-@{k}{margin-top:unit((@k), px);}
+  & .mr-@{k}{margin-right:unit((@k), px);}
+  & .mb-@{k}{margin-bottom:unit((@k), px);}
+  & .pad-@{k}{padding:unit((@k), px);}
+  & .pl-@{k}{padding-left:unit((@k), px);}
+  & .pt-@{k}{padding-top:unit((@k), px);}
+  & .pr-@{k}{padding-right:unit((@k), px);}
+  & .pb-@{k}{padding-bottom:unit((@k), px);}
+}
+
+// 字体大小
+.fontSize(@i) when (@i > 0){
+  .fontSize((@i - 1));
+  @k:@i + 9;
+  & .font-@{k}{font-size:unit(@k, px);}
+}
+
+.fontSizeMax(@i) when (@i > 0){
+  .fontSizeMax((@i - 1));
+  @k:@i * 2 + 30;
+  & .font-@{k}{font-size:unit(@k, px);}
+}
+
+// 宽度与高度
+.column(@i:20) when (@i > 0){
+  .column((@i - 1));
+  @k:@i * 5;
+  .column-@{k}{width:percentage(@k/100);}
+  .blk-@{k}{clear:both;height:unit(@k, px);overflow:hidden;display:block;font-size:0;}
+}
+
+html,body{font-family: "PingFangSC-Regular, sans-serif;苹方-简 常规体";}
+
+body{
+  .loop(20);
+  .fontSize(21);
+  .fontSizeMax(12);
+  .column()
+}
+
+// 边框
+.bda{border:1px solid @whiteSmoke;}
+
+.bdl{border-left:1px solid @whiteSmoke;}
+
+.bdt{border-top:1px solid @whiteSmoke;}
+
+.bdr{border-right:1px solid @whiteSmoke;}
+
+.bdb{border-bottom:1px solid @whiteSmoke;}
+
+// 字体颜色
+.white{color:@white;}
+
+.red{color:@red;}
+
+.green{color:@green;}
+
+.blue{color:@blue;}
+
+.gray{color:@gray;}
+
+.grayDark{color:@gray-dark;}
+
+.form-control,button{
+  &.focus,&:focus{
+    -webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;
+  }
+}
+.custom-control-input:focus{
+  ~.custom-control-label{
+    &:before{-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}
+  }
+}
+
+form{
+  &.form-inline{
+    & label{margin-right:5px;}
+  }
+}

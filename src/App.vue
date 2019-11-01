@@ -1,8 +1,15 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div id="app">
+        <div class="container">
+            <transition name="custom-classes-transition" enter-active-class="animated fadeIn"
+                        leave-class="animated fadeOut">
+                <keep-alive>
+                    <router-view v-if="$route.meta.keepAlive"></router-view>
+                </keep-alive>
+            </transition>
+            <router-view v-if="!$route.meta.keepAlive"></router-view>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -12,12 +19,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
