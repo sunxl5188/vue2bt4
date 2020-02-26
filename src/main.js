@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import '@~/js/filter'
 import $ from 'jquery'
 import '../node_modules/popper.js'
 import '../node_modules/bootstrap'

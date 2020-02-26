@@ -1,6 +1,7 @@
 <template>
     <div class="hello">
-        <h1>{{msg}}</h1>
+        <h1>{{msg|asterisk(4,4)}}</h1>
+        <h4>{{idCard|asterisk(4,4)}}</h4>
     </div>
 </template>
 
@@ -9,7 +10,8 @@ export default {
   name: 'Home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '13122546879',
+      idCard: '350424200020204186'
     }
   },
   mounted () {
