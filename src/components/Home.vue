@@ -1,7 +1,7 @@
 <template>
     <div class="hello">
-        <h1>{{msg|asterisk(4,4)}}</h1>
-        <h4>{{idCard|asterisk(4,4)}}</h4>
+        <h1>{{msg|starFilter(4,4)}}</h1>
+        <h4>{{idCard|starFilter(4,4)}}</h4>
     </div>
 </template>
 
