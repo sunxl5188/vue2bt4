@@ -1,22 +1,28 @@
 <template>
-    <div class="hello">
-        <h1>{{msg|starFilter(4,4)}}</h1>
-        <h4>{{idCard|starFilter(4,4)}}</h4>
-    </div>
+  <div class="hello">
+    <input type="text" name="" v-model="keywords">
+    <h1 v-html="highlight(msg, keywords)"></h1>
+    <h4>{{idCard|plusXin(4,4)}}</h4>
+  </div>
 </template>
 
 <script>
+import { highlight } from '../assets/js/utils'
+
 export default {
   name: 'Home',
   data () {
     return {
+      keywords: '',
       msg: '13122546879',
       idCard: '350424200020204186'
     }
   },
+  created () {
+  },
   mounted () {
   },
-  methods: {},
+  methods: {highlight},
   components: {},
   watch: {},
   errorCaptured (err, vm, info) {
