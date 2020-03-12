@@ -1,6 +1,10 @@
 /**
  * 高亮显示
  */
-export function highlight (str, keys) {
-  return keys ? str.replace(keys, (word) => '<font color=\'#f90\'>' + word + '</font>') : str
+export function highlight (words, keys) {
+  if (keys) {
+    return words.replace(new RegExp(keys, 'ig'), (matchedTxt) => '<font style="color:#f90;">' + matchedTxt + '</font>')
+  } else {
+    return words
+  }
 }

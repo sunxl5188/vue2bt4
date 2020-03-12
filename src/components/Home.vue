@@ -1,13 +1,12 @@
 <template>
-  <div class="hello">
+  <div class="hljs">
     <input type="text" name="" v-model="keywords">
-    <h1 v-html="highlight(msg, keywords)"></h1>
-    <h4>{{idCard|plusXin(4,4)}}</h4>
+    <h1 v-html="highlight(msg,keywords)"></h1>
   </div>
 </template>
 
 <script>
-import { highlight } from '../assets/js/utils'
+import {highlight} from '../assets/js/utils'
 
 export default {
   name: 'Home',
@@ -21,6 +20,9 @@ export default {
   created () {
   },
   mounted () {
+    let self = this
+    self.$nextTick(() => {
+    })
   },
   methods: {highlight},
   components: {},

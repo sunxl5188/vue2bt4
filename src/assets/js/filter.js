@@ -1,4 +1,5 @@
 import Vue from 'vue'
+
 /**
  * 获取文件名后缀
  */
