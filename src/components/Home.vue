@@ -1,30 +1,28 @@
 <template>
   <div class="hljs">
-    <input type="text" name="" v-model="keywords">
-    <h1 v-html="highlight(msg,keywords)"></h1>
+    <button type="button" class="btn btn-primary" id="aa" @click="countdown('aa', 30)">获取验证码</button>
   </div>
 </template>
 
 <script>
-import {highlight} from '../assets/js/utils'
+import {countdownInit, countdown} from '../assets/js/utils'
 
 export default {
   name: 'Home',
   data () {
-    return {
-      keywords: '',
-      msg: '13122546879',
-      idCard: '350424200020204186'
-    }
+    return {}
   },
   created () {
   },
   mounted () {
     let self = this
     self.$nextTick(() => {
+      self.countdownInit('aa')
     })
   },
-  methods: {highlight},
+  methods: {
+    countdownInit, countdown
+  },
   components: {},
   watch: {},
   errorCaptured (err, vm, info) {
