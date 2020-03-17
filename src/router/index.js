@@ -10,6 +10,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: resolve => require(['@#/Home'], resolve)
+    },
+    {
+      path: '/clipboard',
+      name: 'clipboard',
+      component: () => import('@#/Clipboard')
     }
   ]
 })
