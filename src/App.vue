@@ -19,7 +19,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
                  aria-expanded="false">图片</a>
               <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <router-link to='/photo-preview'>图片预览</router-link>
+                <router-link to='/photo-preview' class="dropdown-item">图片预览</router-link>
+                <router-link to='/swiper' class="dropdown-item">图片轮播</router-link>
               </div>
             </li>
           </ul>

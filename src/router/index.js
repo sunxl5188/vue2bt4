@@ -20,6 +20,11 @@ export default new Router({
       path: '/photo-preview',
       name: 'photo-preview',
       component: () => import('@#/Photo-preview')
+    },
+    {
+      path: '/swiper',
+      name: 'swiper',
+      component: () => import('@#/Swiper')
     }
   ]
 })
