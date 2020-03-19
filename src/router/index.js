@@ -15,6 +15,11 @@ export default new Router({
       path: '/clipboard',
       name: 'clipboard',
       component: () => import('@#/Clipboard')
+    },
+    {
+      path: '/photo-preview',
+      name: 'photo-preview',
+      component: () => import('@#/Photo-preview')
     }
   ]
 })
