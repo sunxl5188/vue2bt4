@@ -1,31 +1,28 @@
 <template>
     <div id="app">
-      <nav class="navbar navbar-light bg-light">
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">1111</button>
-        <div class="collapse navbar-expand-md" id="collapsibleNavId">
-          <a class="navbar-brand" href="#">vue2bt4</a>
-          <ul class="nav navbar-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">vue-example</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Nav 1 <span class="sr-only">(current)</span></a>
+              <router-link to='/' class="nav-link" exact>首页</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Nav 2</a>
+              <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="dropdownId"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nav 3 dropdown</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">图片</a>
               <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="#">Action 1</a>
-                <a class="dropdown-item" href="#">Action 2</a>
+                <router-link to='/photo-preview'>图片预览</router-link>
               </div>
             </li>
           </ul>
-          <form class="form-inline float-xs-right">
-            <input class="form-control" type="text" placeholder="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>
       </nav>
       <div class="container">
